@@ -44,7 +44,7 @@ airplaneScheduleAction status =
             "Esperar"
 
         Boarding ->
-            "Abordar"
+            "Buscar boleto"
 
 
 airportAction : List AirplaneStatus -> List String
