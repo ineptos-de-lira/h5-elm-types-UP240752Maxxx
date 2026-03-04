@@ -34,7 +34,7 @@ airplaneScheduleActionTest =
     describe "Testing airplaneScheduleAction function"
         [ test "airplaneScheduleAction Cancelled should reduce to \"Pedir reembolso\"" <|
             \_ ->
-                Helper.airplaneScheduleAction Helper.Cancelled
+                Helper.airplaneScheduleAction Helper.Canceled
                     |> Expect.equal "Pedir reembolso"
         , test "airplaneScheduleAction Delayed should reduce to \"Esperar\"" <|
             \_ ->
@@ -62,7 +62,7 @@ waitableAirplaneStatusFuzzer =
 airplaneActionTest : Test
 airplaneActionTest =
     describe "Testing airplaneAction function"
-        [ fuzz (Fuzz.list (Fuzz.constant Helper.Cancelled)) "airplaneAction [Cancelled] should reduce to [\"Pedir reembolso\"]" <|
+        [ fuzz (Fuzz.list (Fuzz.constant Helper.Canceled)) "airplaneAction [Cancelled] should reduce to [\"Pedir reembolso\"]" <|
             \list ->
                 Helper.airportAction list
                     |> Expect.equal (List.repeat (List.length list) "Pedir reembolso")
