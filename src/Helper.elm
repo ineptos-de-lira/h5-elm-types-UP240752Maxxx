@@ -45,3 +45,8 @@ airplaneScheduleAction status =
 
         Boarding ->
             "Abordar"
+
+
+airportAction : List AirplaneStatus -> List String
+airportAction statuses =
+    List.map airplaneScheduleAction statuses
